@@ -123,3 +123,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+model/yolo.h5
+venv/traffic-mini.mp4
