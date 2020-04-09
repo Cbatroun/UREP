@@ -125,3 +125,5 @@ dmypy.json
 .pyre/
 model/yolo.h5
 venv/traffic-mini.mp4
+
+.idea/
