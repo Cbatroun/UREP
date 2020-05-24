@@ -14,7 +14,7 @@ detector.setModelPath(os.path.join(dirpath, '..', "model\\yolo.h5"))
 detector.loadModel("fast")
 custom = detector.CustomObjects(car=True)
 
-camera = cv2.VideoCapture(os.path.join(dirpath, "parkingvideo_Trim.mp4"))
+camera = cv2.VideoCapture(os.path.join(dirpath, "unpark_540.mp4"))
 # camera = cv2.VideoCapture(0)
 tracker = 0
 
@@ -34,7 +34,7 @@ def detect(q, f):
                                                                           input_type="array", output_type="array")
             q.put(detection)
 
-            cv2.imshow("AI stream", cv2.resize(frame_proc, (1200, 800)))
+            cv2.imshow("AI stream", cv2.resize(frame_proc, (480, 360)))
             # initial = 1
             c += 1
             f.put(c)
@@ -47,7 +47,7 @@ def detect(q, f):
                                                                           input_type="array", output_type="array")
                 q.put(detection)
 
-                cv2.imshow("AI stream", cv2.resize(frame_proc, (1200, 800)))
+                cv2.imshow("AI stream", cv2.resize(frame_proc, (480, 360)))
                 c += 1
                 skip += 1
                 f.put(c)
