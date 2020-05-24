@@ -14,7 +14,7 @@ detector.setModelPath(os.path.join(dirpath, '..', "model\\yolo.h5"))
 detector.loadModel("fast")
 custom = detector.CustomObjects(car=True)
 
-camera = cv2.VideoCapture(os.path.join(dirpath, "unpark_540.mp4"))
+camera = cv2.VideoCapture(os.path.join(dirpath, "Aivideo.mp4"))
 # camera = cv2.VideoCapture(0)
 tracker = 0
 
@@ -34,8 +34,8 @@ def detect(q, f):
                                                                           input_type="array", output_type="array")
             q.put(detection)
 
-            cv2.imshow("AI stream", cv2.resize(frame_proc, (480, 360)))
-            # initial = 1
+            cv2.imshow("AI stream", frame_proc)
+            #initial = 1
             c += 1
             f.put(c)
         if cv2.waitKey(25) & 0xFF == ord('l'):
@@ -47,7 +47,7 @@ def detect(q, f):
                                                                           input_type="array", output_type="array")
                 q.put(detection)
 
-                cv2.imshow("AI stream", cv2.resize(frame_proc, (480, 360)))
+                cv2.imshow("AI stream", frame_proc)
                 c += 1
                 skip += 1
                 f.put(c)
@@ -62,10 +62,11 @@ def distance(a1, b1, a2, b2):
 
 
 class Point:
-    def __init__(self, xp, yp, c):
+    def __init__(self, xp, yp, c, here):
         self.x = xp
         self.y = yp
         self.timer = 0
+        self.here = here
         self.c = c
         # self.nextTo = []
 
@@ -74,12 +75,12 @@ class Point:
 
     def __str__(self):
         return "Point(percent=" + str(self.c) + ",x=" + str(self.x) + ",y=" + str(self.y) \
-               + ", timer=" + str(self.timer) + ")"
+               + ", timer=" + str(self.timer) + ", heretime=" + str(self.here)+")"
 
 
 centroids = {
     '0': {
-        'points': [Point(0, 0, 0)]
+        'points': [Point(0, 0, 0, 0)]
     }
 }
 
@@ -107,10 +108,10 @@ if __name__ == '__main__':
                 # print("center x: ", xc.__str__(), " -  y: " + yc.__str__())
                 if cf in centroids.keys():
                     p = centroids[cf]['points']
-                    p.append(Point(xc, yc, percentage))
+                    p.append(Point(xc, yc, percentage, int(cf)))
                 else:
                     centroids[cf] = {
-                        'points': [Point(xc, yc, percentage)]
+                        'points': [Point(xc, yc, percentage, int(cf))]
                     }
 
         if centroids.__len__() > 3:
@@ -122,14 +123,22 @@ if __name__ == '__main__':
             cs_pre = centroids[str(int(cf) - 1)]['points']
             for p in cs_pre:
                 found = False
+                parked = False
                 for c in cs:
                     close = distance(p.x, p.y, c.x, c.y)
                     if close < 15:
                         found = True
-                if not found:
+
+                        if int(cf) > p.here + 40:
+                            parked = True
+                            print('CAR PARKED')
+                        centroids[cf]['points'].remove(c)
+                        centroids[cf]['points'].append(p)
+
+                if not found and parked:
                     p.timer += 1
                     centroids[cf]['points'].append(p)
-                    if p.timer > 20:
+                    if p.timer > 40:
                         print('Car moved')
                         centroids[cf]['points'].remove(p)
 

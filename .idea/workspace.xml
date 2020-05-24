@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="5c6381af-6ba4-444d-81f5-8914621c3896" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -25,23 +43,23 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv/Scripts" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/venv" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\cbatr\Documents\GitHub\UREP\venv" />
+      <recent name="C:\Users\cbatr\Documents\GitHub\UREP\model" />
       <recent name="E:\UREP\venv\Scripts" />
       <recent name="E:\UREP\venv" />
       <recent name="E:\python projects\videoAiobjectdetection\frames" />
-      <recent name="G:\python projects\videoAiobjectdetection\frames" />
-      <recent name="G:\python projects\videoAiobjectdetection\model" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\cbatr\Documents\GitHub\UREP\venv" />
       <recent name="E:\UREP\venv" />
       <recent name="E:\python projects\videoAiobjectdetection\venv" />
       <recent name="E:\python projects\videoAiobjectdetection\model" />
@@ -89,6 +107,17 @@
     </task>
     <servers />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="WindowStateProjectService">
     <state x="675" y="322" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1586448057493">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -98,31 +127,36 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="385" y="261" key="FileChooserDialogImpl/-1920.0.1920.1040/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1585521310569" />
-    <state width="1899" height="164" key="GridCell.Tab.0.bottom" timestamp="1586452111974">
+    <state width="1899" height="157" key="GridCell.Tab.0.bottom" timestamp="1590356277796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="164" key="GridCell.Tab.0.bottom/-1920.0.1920.1040/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1586452111974" />
     <state width="1899" height="164" key="GridCell.Tab.0.bottom/0.0.1920.1040/0.-1080.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585884368152" />
-    <state width="1899" height="164" key="GridCell.Tab.0.center" timestamp="1586452111974">
+    <state width="1899" height="157" key="GridCell.Tab.0.bottom/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590356277796" />
+    <state width="1899" height="157" key="GridCell.Tab.0.center" timestamp="1590356277796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="164" key="GridCell.Tab.0.center/-1920.0.1920.1040/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1586452111974" />
     <state width="1899" height="164" key="GridCell.Tab.0.center/0.0.1920.1040/0.-1080.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585884368152" />
-    <state width="1899" height="164" key="GridCell.Tab.0.left" timestamp="1586452111974">
+    <state width="1899" height="157" key="GridCell.Tab.0.center/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590356277796" />
+    <state width="1899" height="157" key="GridCell.Tab.0.left" timestamp="1590356277796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="164" key="GridCell.Tab.0.left/-1920.0.1920.1040/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1586452111974" />
     <state width="1899" height="164" key="GridCell.Tab.0.left/0.0.1920.1040/0.-1080.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585884368152" />
-    <state width="1899" height="164" key="GridCell.Tab.0.right" timestamp="1586452111974">
+    <state width="1899" height="157" key="GridCell.Tab.0.left/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590356277796" />
+    <state width="1899" height="157" key="GridCell.Tab.0.right" timestamp="1590356277796">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1899" height="164" key="GridCell.Tab.0.right/-1920.0.1920.1040/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1586452111974" />
     <state width="1899" height="164" key="GridCell.Tab.0.right/0.0.1920.1040/0.-1080.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585884368152" />
-    <state x="461" y="162" key="SettingsEditor" timestamp="1586446412112">
+    <state width="1899" height="157" key="GridCell.Tab.0.right/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590356277796" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1590351533933">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="162" key="SettingsEditor/-1920.0.1920.1040/0.0.1920.1040/0.-1080.1920.1040@0.0.1920.1040" timestamp="1586446412112" />
     <state x="461" y="162" key="SettingsEditor/0.0.1920.1040/0.-1080.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1585878840306" />
+    <state x="461" y="162" key="SettingsEditor/1920.7.1920.1040/0.0.1920.1040@0.0.1920.1040" timestamp="1590351533933" />
     <state x="656" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1586446351645">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
