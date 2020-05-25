@@ -67,6 +67,10 @@ class Point:
         self.y = yp
         self.timer = 0
         self.here = here
+        self.startx = xp
+        self.starty = yp
+        self.parked = False
+        self.moved =False
         self.c = c
         # self.nextTo = []
 
@@ -75,7 +79,8 @@ class Point:
 
     def __str__(self):
         return "Point(percent=" + str(self.c) + ",x=" + str(self.x) + ",y=" + str(self.y) \
-               + ", timer=" + str(self.timer) + ", heretime=" + str(self.here)+")"
+               + ", timer=" + str(self.timer) + ", heretime=" + str(self.here)+ ", parked=" + str(self.parked)\
+               + ",startx=" + str(self.startx) + ",starty=" + str(self.starty) + ",moved=" + str(self.moved)+")"
 
 
 centroids = {
@@ -108,6 +113,7 @@ if __name__ == '__main__':
                 # print("center x: ", xc.__str__(), " -  y: " + yc.__str__())
                 if cf in centroids.keys():
                     p = centroids[cf]['points']
+
                     p.append(Point(xc, yc, percentage, int(cf)))
                 else:
                     centroids[cf] = {
@@ -122,24 +128,43 @@ if __name__ == '__main__':
         if centroids.__len__() > 2:
             cs_pre = centroids[str(int(cf) - 1)]['points']
             for p in cs_pre:
+                counter = 1
                 found = False
                 parked = False
+                moved = True
                 for c in cs:
                     close = distance(p.x, p.y, c.x, c.y)
                     if close < 15:
                         found = True
-
+                        if counter == 2:
+                            print('Double')
+                        else:
+                            counter += 1
                         if int(cf) > p.here + 40:
                             parked = True
-                            print('CAR PARKED')
-                        centroids[cf]['points'].remove(c)
-                        centroids[cf]['points'].append(p)
 
-                if not found and parked:
+                            if not c.moved:
+                                d = distance(p.startx, p.starty, c.startx, c.starty)
+                                if d >= 100:
+                                    moved = True
+                                    c.moved = moved
+                                    print('Car Moved')
+                            #print('CAR PARKED')
+
+                        centroids[cf]['points'].remove(c)
+                        c.startx = p.startx
+                        c.starty = p.starty
+                        c.parked = parked
+                        c.timer = 0
+                        c.here = p.here
+                        centroids[cf]['points'].append(c)
+
+                    break
+                if not found and p.parked and p.moved:
                     p.timer += 1
                     centroids[cf]['points'].append(p)
                     if p.timer > 40:
-                        print('Car moved')
+                        print('Parking space found')
                         centroids[cf]['points'].remove(p)
 
         # cs = centroids[cf]['points']
